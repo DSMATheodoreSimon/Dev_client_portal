@@ -1,0 +1,13 @@
+Reste à faire :
+    Vérifier que l'on sauvegarde bien le fichier / Done
+    Créer un autre utilisateur / Done default et test
+    Associer un formulaire à un utilisateur / Done on peut associer un groupe à un formulaire
+
+    Permettre de télécharger le ficier depuis l'admin panel (et en zip si plusieurs fichiers)
+    Pouvoir télécharger réponses utilisateur
+
+    Créer un dossier avec ID utilisateur puis dedans des dossiers date qui contienent tous ses documents
+    
+    Gérer la BD
+    Essayer d'utiliser le front end de Smit 
+    Publier le poc 

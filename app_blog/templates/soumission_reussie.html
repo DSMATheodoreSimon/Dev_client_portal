@@ -1,0 +1,23 @@
+{% extends "base.html" %}  <!-- Assure-toi d'étendre ton template de base si tu en as un -->
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de soumission</title>
+</head>
+<body>
+    <h1>Merci pour votre soumission !</h1>
+    <!-- Ici, tu affiches les détails de la réponse -->
+    <p>Voici les détails de votre soumission :</p>
+    <ul>
+        <li>ID de la soumission: {{ reponse.pk }}</li>
+        <li>Date de soumission: {{ reponse.date_soumission }}</li>
+        <!-- Affiche d'autres informations de la réponse si nécessaire -->
+    </ul>
+    <a href="{% url 'home' %}">Retour à l'accueil</a>
+</body>
+</html>
+{% endblock %}

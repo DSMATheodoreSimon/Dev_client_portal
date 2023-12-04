@@ -1,0 +1,65 @@
+{% extends "base.html" %}  <!-- Assure-toi d'étendre ton template de base si tu en as un -->
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Mon Blog</title>
+    <!-- Insère ici les liens vers tes feuilles de style CSS -->
+</head>
+<body>
+    <header>
+        {% if user.is_authenticated %}
+            <p>Bienvenue, {{ user.username }}!</p>
+        {% else %}
+            <p>Bienvenue, visiteur! Veuillez <a href="{% url 'login' %}">vous connecter</a>.</p>
+        {% endif %}
+        <h1>Bienvenue sur Mon Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Accueil</a></li>
+                <!-- Autres liens de navigation si nécessaire -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Articles Récents</h2>
+            {% for article in articles %}
+                <article>
+                    <h3>{{ article.titre }}</h3>
+                    <p>Publié le : {{ article.date_publication }}</p>
+                    <p>{{ article.contenu|truncatewords:30 }}</p>
+                    <!-- Assure-toi que le nom de l'URL correspond à celui défini dans urls.py -->
+                    <a href="{% url 'detail_article' article.id %}">Lire la suite</a>                   
+                </article>
+            {% empty %}
+                <p>Aucun article trouvé.</p>
+            {% endfor %}
+
+            
+            {% for formulaire in formulaires %}
+            <p>{{ formulaire.titre }}</p>
+            <a href="{% url 'afficher_formulaire' formulaire.id %}">Remplir le formulaire</a>
+            {% empty %}
+                <p>Aucun form trouvé.</p>
+            {% endfor %}
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; {{ current_year }} Mon Blog</p>
+        <!-- Ajoute des informations supplémentaires ici si nécessaire -->
+    </footer>
+
+    <!-- Tu peux ajouter des scripts JavaScript ici si nécessaire -->
+</body>
+</html>
+{% endblock %}

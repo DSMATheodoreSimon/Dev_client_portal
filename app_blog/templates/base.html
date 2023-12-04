@@ -1,0 +1,19 @@
+<!-- base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon Blog</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    
+    <div class="logo-container">
+        <img src="{% static 'images/dsma_logo_white.png' %}" alt="Logo DSMA" class="logo">
+    </div>
+    
+</head>
+<body>
+    {% block content %}
+    <!-- Le contenu spécifique à chaque page sera inséré ici -->
+    {% endblock %}
+</body>
+</html>

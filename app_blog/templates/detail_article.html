@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.titre }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ article.titre }}</h1>
+    </header>
+
+    <main>
+        <article>
+            <h2>Publié le : {{ article.date_publication }}</h2>
+            <p>{{ article.contenu }}</p>
+        </article>
+        <li><a href="{% url 'home' %}">Accueil</a></li>
+    </main>
+
+    <footer>
+        <p>&copy; {{ current_year }} Mon Blog</p>
+    </footer>
+</body>
+</html>
+{% endblock %}

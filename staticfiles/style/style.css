@@ -1,0 +1,72 @@
+/* Reset de quelques styles pour assurer la cohérence entre les navigateurs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #DEDFE0; /* Gray: 222, 223, 224 */
+    color: #003E7A; /* Blue 1: 0, 66, 122 */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #103587; /* Blue 2: 16, 135, 169 */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    
+    .logo-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #00427A; /* Utilise le code couleur bleu foncé de l'entreprise */
+        padding: 10px; /* Ajuste selon tes besoins */
+    }
+    
+    .logo {
+        height: 50px; /* Ajuste la hauteur du logo selon tes besoins */
+        width: auto; /* Cela gardera le ratio du logo */
+    }
+    
+}
+
+header img {
+    max-height: 50px; /* Ajuste cette valeur selon la taille de ton logo */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #35B5B9; /* Green: 53, 181, 185 */
+    padding: 0.5rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+    background: #027491; /* Une nuance plus foncée de Blue 2 pour l'effet hover */
+}
+
+.main-content {
+    padding: 1rem;
+    background: #fff; /* Un fond blanc pour le contenu principal pour une meilleure lisibilité */
+}
+
+.footer {
+    background: #103587; /* Blue 2: 16, 135, 169 */
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ajoute d'autres styles personnalisés ici */
