@@ -20,12 +20,15 @@ from django.urls import include, path
 from app_blog.views import HomePageView  # Assure-toi d'importer la fonction 'index' et non 'home'
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('app_blog/', include('app_blog.urls')), 
     path('accounts/', include('django.contrib.auth.urls')),
+    path('logout/', LogoutView.as_view(), name='logout'),
+
 ] 
 
 if settings.DEBUG:

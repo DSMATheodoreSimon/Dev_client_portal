@@ -1,6 +1,18 @@
-{% extends "base.html" %}  <!-- Assure-toi d'étendre ton template de base si tu en as un -->
+{% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <head>
+    <title>Mon Blog</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    
+    <div class="logo-container">
+        <img src="{% static 'images/dsma_logo_white.png' %}" alt="Logo DSMA" class="logo">
+    </div>
+    
+</head>
+<body>
   <h2>Login</h2>
   <form method="post">
     {% csrf_token %}
@@ -8,4 +20,5 @@
     <button type="submit">Login</button>
   </form>
   <p>Pas encore membre ? <a href="{% url 'register' %}">Inscrivez-vous ici</a></p> <!-- Ajoute cette ligne si tu as une page d'inscription -->
-{% endblock %}
+</body>
+</html>

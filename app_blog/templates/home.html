@@ -16,8 +16,6 @@
     <header>
         {% if user.is_authenticated %}
             <p>Bienvenue, {{ user.username }}!</p>
-        {% else %}
-            <p>Bienvenue, visiteur! Veuillez <a href="{% url 'login' %}">vous connecter</a>.</p>
         {% endif %}
         <h1>Bienvenue sur Mon Blog</h1>
         <nav>
